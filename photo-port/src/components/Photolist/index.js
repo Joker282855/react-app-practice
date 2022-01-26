@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 import photo from '../../assets/small/commercial/0.jpg';
 
@@ -64,15 +64,34 @@ function Photolist() {
             descipriton: 'Lorem ipsum dolor sit amet, consectuetuer adispicing elit. Nunc ultricie'
         },
         {
-            
-        }
-    ])
+            name: 'Panoramic village by sea',
+            category: 'landscape',
+            description: 'Lorem ipsum dolor sit amet, conesctuetuer adispicing elit. Nunc ultricie'
+        },
+        {
+            name: 'Domestic landscape',
+            category: 'landscape',
+            description: 'Lorem ipsum dolor sit amet,  consectuetuer adispicing elit. Nunc ultricie',
+        },
+        {
+            name: 'Park bench',
+            category: 'landscape',
+            description: 'Lorem ipsum dolor sit amet, consectuetuer adispicing elit. Nunc ultiricie',
+        },
+    ]);
+
     return (
         <div>
-            <img
-                src={photo}
-                alt="Commercial Example"
-            />
+            <div className="flex-row">
+                {photos.map((image, i) => (
+                    <img 
+                        src={require(`../../assets/small/${category}/${i}.jpg`).default}
+                        alt={image.name}
+                        className="img-thumbnail mx-1"
+                        key={image.name}
+                    />
+                ))}
+            </div>
         </div>
     )
 }
