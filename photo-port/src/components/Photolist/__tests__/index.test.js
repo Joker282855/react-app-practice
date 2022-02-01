@@ -7,11 +7,11 @@ afterEach(cleanup)
 
 describe('PhotoList is rendering', () => {
   it('renders', () => {
-    render(<PhotoList />);
+    render(<PhotoList category />);
   });
 
   it('renders', () => {
-    const { asFragment } = render(<PhotoList />)
+    const { asFragment } = render(<PhotoList category />)
     expect(asFragment()).toMatchSnapshot()
   });
 });
