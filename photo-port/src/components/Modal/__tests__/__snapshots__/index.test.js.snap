@@ -1,0 +1,31 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Modal is rendering Matches snapshot 1`] = `
+<DocumentFragment>
+  <div
+    class="modalBackdrop"
+  >
+    <div
+      class="modalContainer"
+    >
+      <h3
+        class="modalTitle"
+      >
+        Park Bench
+      </h3>
+      <img
+        alt="current category"
+        src="1.jpg"
+      />
+      <p>
+        Lorem ipsum dolor sit amet, consectur adispicing elit. Nunc ultricide
+      </p>
+      <button
+        type="button"
+      >
+        Close this Modal
+      </button>
+    </div>
+  </div>
+</DocumentFragment>
+`;
