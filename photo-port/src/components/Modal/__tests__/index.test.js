@@ -9,7 +9,7 @@ const currentPhoto = {
     description: 'Lorem ipsum dolor sit amet, consectur adispicing elit. Nunc ultricide',
     index: 1
 };
-const mocktoggleModal = jest.fn()
+const mockToggleModal = jest.fn()
 
 afterEach(cleanup)
 
@@ -18,19 +18,32 @@ describe('Modal is rendering', () => {
     it('renders', () => {
         render(<Modal 
             currentPhoto={currentPhoto}
-            toggleModal={mocktoggleModal}
+            toggleModal={mockToggleModal}
         />);
     });
 
     it('Matches snapshot', () => {
         const { asFragment } = render(<Modal 
             currentPhoto={currentPhoto}
-            toggleModal={mocktoggleModal}
+            toggleModal={mockToggleModal}
         />);
 
         expect(asFragment()).toMatchSnapshot();
 
     });
 
+});
+
+describe('Click Event', () => {
+    it('calls onClose handler', () => {
+        const { getByText } = render(<Modal 
+            onClose={mockToggleModal}
+            currentPhoto={currentPhoto}
+        />);
+
+        fireEvent.click(getByText('Close this Modal'));
+        
+        expect(mockToggleModal).toHaveBeenCalledTimes(1);
+    });  
 });
 
